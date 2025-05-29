@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="وب‌سایت رسمی هادی مرجانه، نوحه‌خوان و مداح اهل بیت (ع)" />
+  <meta name="keywords" content="نوحه, مداحی, اهل بیت, حسین, عاشورا, هادی مرجانه" />
+  <title>نوای دلنشین | هادی مرجانه</title>
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;300;400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    :root {
+      --dark-bg: #0f0c29;
+      --dark-card: #1c1a2b;
+      --dark-header: #121024;
+      --primary-gradient: linear-gradient(135deg, #7b2ff7 0%, #f107a3 100%);
+      --secondary-gradient: linear-gradient(135deg, #662d8c 0%, #ed1e79 100%);
+      --text-light: #f7f7ff;
+      --text-muted: #b8b8cb;
+      --border-color: rgba(247, 26, 114, 0.5);
+      --link-hover-glow: #f107a3;
+      --shadow-glow: 0 0 15px #f107a3aa;
+      --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.85);
+
+      --font-family: 'Vazirmatn', sans-serif;
+
+      --border-radius-card: 14px;
+      --border-radius-button: 9px;
+
+      --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Reset and global */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: var(--dark-bg);
+      color: var(--text-light);
+      font-family: var(--font-family);
+      direction: rtl;
+      text-align: right;
+      line-height: 1.85;
+      overflow-x: hidden;
+    }
+    a {
+      color: var(--primary-gradient-start);
+      text-decoration: none;
+      background-image: linear-gradient(to right, #d4145a, #fbb03b);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      transition: filter var(--transition);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    a:hover, a:focus {
+      filter: drop-shadow(0 0 6px var(--link-hover-glow));
+      outline: none;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    /* Sections */
+    .section-container {
+      padding: 110px 0 90px;
+      position: relative;
+      z-index: 1;
+    }
+    .section-title {
+      font-size: 3.8rem;
+      font-weight: 900;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      margin-bottom: 65px;
+      position: relative;
+      letter-spacing: 0.06em;
+      user-select: none;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 140px;
+      height: 5px;
+      background: var(--secondary-gradient);
+      bottom: -20px;
+      right: 50%;
+      transform: translateX(50%);
+      border-radius: 3px;
+      box-shadow: 0 0 15px var(--link-hover-glow);
+    }
+    .section-description {
+      max-width: 850px;
+      margin: 0 auto 70px;
+      color: var(--text-muted);
+      font-size: 1.25rem;
+      text-align: center;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      border-radius: var(--border-radius-button);
+      font-weight: 700;
+      font-size: 1.15rem;
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition);
+      text-shadow: 0 0 8px rgba(241, 7, 163, 0.8);
+      user-select: none;
+      box-shadow:
+        0 0 12px #f107a3aa,
+        inset 0 0 14px #7b2ff7aa;
+    }
+    .btn-primary {
+      background: var(--primary-gradient);
+      color: var(--text-light);
+      border: 1.8px solid #f107a3cc;
+      text-shadow: 0 0 8px #f107a3cc;
+      filter: drop-shadow(0 0 10px #f107a3cc);
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      transform: scale(1.07);
+      filter: drop-shadow(0 0 20px #f107a3ee);
+      outline: none;
+      box-shadow:
+        0 0 20px #f107a3ff,
+        inset 0 0 25px #7b2ff7cc;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-light);
+      border: 2px solid var(--secondary-gradient);
+      box-shadow:
+        0 0 8px #ed1e7988;
+    }
+    .btn-secondary:hover,
+    .btn-secondary:focus {
+      background: var(--secondary-gradient);
+      box-shadow:
+        0 0 20px #ed1e79cc,
+        inset 0 0 20px #f107a3cc;
+      color: var(--text-light);
+      transform: scale(1.05);
+      outline: none;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary-gradient);
+      color: var(--text-light);
+    }
+    .btn-outline:hover,
+    .btn-outline:focus {
+      background: var(--primary-gradient);
+      box-shadow: 0 0 15px #7b2ff7cc;
+      color: var(--text-light);
+      outline: none;
+      transform: translateY(-2px);
+    }
+
+    /* Header & Hero */
+    header.hero-section {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 50px;
+      background:
+        linear-gradient(rgba(15, 12, 41, 0.85), rgba(15, 12, 41, 0.85)),
+        url('hero-bg-dark.jpg') center/cover no-repeat fixed;
+      color: var(--text-light);
+      text-align: center;
+      overflow: hidden;
+    }
+    .header-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: rgba(15, 12, 41, 0.6);
+      backdrop-filter: blur(8px);
+      mix-blend-mode: multiply;
+    }
+    header .container {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    nav.main-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 35px 0;
+    }
+    a.site-logo {
+      font-size: 2.8rem;
+      font-weight: 900;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 18px #f107a3cc;
+      user-select: none;
+      cursor: default;
+    }
+    ul.nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    a.nav-item {
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 10px;
+      transition: background-color var(--transition), box-shadow var(--transition);
+      position: relative;
+      color: var(--text-light);
+    }
+    a.nav-item:hover,
+    a.nav-item:focus {
+      background: var(--secondary-gradient);
+      box-shadow:
+        0 0 15px #ed1e7988,
+        inset 0 0 15px #7b2ff7aa;
+      outline: none;
+    }
+    button.nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      font-size: 2rem;
+      color: var(--text-light);
+      cursor: pointer;
+      z-index: 10;
+    }
+    /* Hero content */
+    .hero-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 80px;
+    }
+    .hero-title {
+      font-size: 5.2rem;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      margin-bottom: 30px;
+      text-shadow:
+        0 0 12px #f107a3cc,
+        0 8px 20px #7b2ff7bb;
+      animation: fadeInDown 1s ease forwards;
+      user-select: none;
+    }
+    .hero-subtitle {
+      font-size: 1.95rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 55px;
+      animation: fadeInUp 1.3s ease forwards;
+      letter-spacing: 0.02em;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 24px;
+      animation: fadeInUp 1.6s ease forwards;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* About section */
+    .about-section {
+      background: var(--dark-bg);
+    }
+    .about-content {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 80px;
+      background: var(--dark-card);
+      border-radius: var(--border-radius-card);
+      padding: 55px 45px;
+      box-shadow: var(--shadow-dark);
+      transition: transform var(--transition);
+      user-select: text;
+    }
+    .about-content:hover {
+      transform: translateY(-9px);
+      box-shadow: 0 20px 50px #f107a3cc;
+    }
+    .about-image-wrapper {
+      flex-shrink: 0;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 11px var(--primary-gradient) inset,
+        0 0 25px var(--link-hover-glow),
+        0 0 45px var(--primary-gradient);
+      animation: pulseBorder 2.8s ease-in-out infinite alternate;
+      cursor: default;
+    }
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition);
+      will-change: transform;
+    }
+    .about-image-wrapper:hover .profile-image {
+      transform: scale(1.07);
+      filter: drop-shadow(0 0 6px var(--link-hover-glow));
+    }
+    .about-text-content {
+      flex-grow: 1;
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+    .about-text-content p {
+      margin-bottom: 22px;
+      user-select: text;
+    }
+    .social-icons {
+      margin-top: 35px;
+      display: flex;
+      gap: 32px;
+      justify-content: flex-end;
+    }
+    .social-icons a {
+      font-size: 2.6rem;
+      color: var(--text-muted);
+      transition: color var(--transition), transform 0.3s ease;
+    }
+    .social-icons a:hover,
+    .social-icons a:focus {
+      color: var(--primary-gradient);
+      transform: translateY(-6px) scale(1.2);
+      outline: none;
+      text-shadow: 0 0 15px var(--link-hover-glow);
+    }
+
+    /* Featured Audio */
+    .featured-audio-section {
+      background: var(--dark-bg);
+    }
+    .audio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 48px;
+    }
+    .audio-card {
+      background: var(--dark-card);
+      border-radius: var(--border-radius-card);
+      padding: 36px;
+      box-shadow:
+        0 14px 40px rgba(241, 7, 163, 0.42);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid transparent;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      user-select: none;
+    }
+    .audio-card:hover,
+    .audio-card:focus-within {
+      transform: translateY(-14px);
+      box-shadow:
+        0 18px 50px rgba(241, 7, 163, 0.70),
+        inset 0 0 18px #7b2ff7cc;
+      border-color: var(--primary-gradient);
+    }
+    .audio-title {
+      font-size: 1.85rem;
+      margin-bottom: 26px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      user-select: text;
+    }
+    .audio-title a {
+      color: var(--text-light);
+      transition: filter var(--transition);
+    }
+    .audio-title a:hover,
+    .audio-title a:focus {
+      filter: drop-shadow(0 0 15px var(--link-hover-glow));
+      outline: none;
+    }
+    .audio-player-wrapper {
+      margin-bottom: 24px;
+      filter: drop-shadow(0 0 12px #d014a3aa);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    audio {
+      width: 100%;
+      border-radius: 10px;
+      outline: none;
+      background-color: #222;
+      filter: invert(1) hue-rotate(185deg);
+      -webkit-filter: invert(1) hue-rotate(185deg);
+    }
+    .audio-description {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      user-select: text;
+    }
+
+    /* Audio Library Section */
+    .audio-library-section {
+      background: var(--dark-card);
+      border-top: 1.5px solid var(--border-color);
+      border-bottom: 1.5px solid var(--border-color);
+      padding-bottom: 100px;
+    }
+    .full-audio-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .audio-list-item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      background: var(--dark-bg);
+      padding: 18px 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(241, 7, 163, 0.28);
+      transition: transform var(--transition), box-shadow var(--transition);
+      border: 1.5px solid var(--border-color);
+      user-select: none;
+    }
+    .audio-list-item:hover,
+    .audio-list-item:focus-within {
+      transform: translateX(-8px);
+      box-shadow: 0 10px 36px rgba(241, 7, 163, 0.58);
+      border-color: var(--primary-gradient);
+      outline: none;
+      cursor: pointer;
+    }
+    .audio-list-item .fa-music {
+      color: var(--primary-gradient-start, #7b2ff7);
+      font-size: 1.7rem;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 10px #f107a3aa);
+    }
+    .audio-list-title {
+      flex-grow: 1;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-light);
+      user-select: text;
+    }
+    .audio-list-item audio {
+      width: 280px;
+      border-radius: 8px;
+      outline: none;
+      filter: invert(1) hue-rotate(185deg);
+      -webkit-filter: invert(1) hue-rotate(185deg);
+      box-shadow: 0 0 12px #f107a3aa inset;
+    }
+    .btn-icon {
+      background: var(--dark-bg);
+      border: 1.8px solid var(--border-color);
+      color: var(--primary-gradient-start, #7b2ff7);
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      box-shadow: none;
+      transition: all var(--transition);
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-icon:hover,
+    .btn-icon:focus {
+      background-image: var(--primary-gradient);
+      color: var(--text-light);
+      box-shadow:
+        0 0 20px #f107a3ff,
+        inset 0 0 10px #7b2ff7cc;
+      outline: none;
+      transform: scale(1.15);
+      cursor: pointer;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: var(--dark-bg);
+      padding-bottom: 120px;
+    }
+    .contact-content {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 70px;
+      max-width: 880px;
+      margin: 0 auto;
+      background: var(--dark-card);
+      border-radius: var(--border-radius-card);
+      padding: 50px 45px;
+      box-shadow: var(--shadow-dark);
+      user-select: text;
+    }
+    .contact-form {
+      flex: 2;
+      min-width: 320px;
+    }
+    .form-group {
+      margin-bottom: 28px;
+    }
+    label {
+      display: block;
+      margin-bottom: 12px;
+      font-weight: 700;
+      color: var(--primary-gradient-start, #7b2ff7);
+      font-size: 1.1rem;
+      user-select: text;
+    }
+    input,
+    textarea {
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 11px;
+      border: 1.8px solid #320c45;
+      background: #1d1437;
+      color: var(--text-light);
+      font-family: var(--font-family);
+      font-size: 1.1rem;
+      box-shadow: inset 0 5px 8px #3a2a60;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      resize: vertical;
+      user-select: text;
+    }
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #f107a3;
+      box-shadow: 0 0 18px #f107a3cc;
+      background: #290c44;
+    }
+    textarea {
+      min-height: 170px;
+    }
+    .btn-full-width {
+      width: 100%;
+      margin-top: 25px;
+      user-select: none;
+    }
+    /* Contact Info */
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+      background: #26193f;
+      border-radius: var(--border-radius-card);
+      padding: 38px 32px;
+      box-shadow:
+        inset 0 0 22px #7b2ff733,
+        0 0 18px #f107a333;
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      user-select: text;
+    }
+    .contact-info h3 {
+      color: var(--secondary-gradient-start, #ed1e79);
+      font-size: 1.85rem;
+      margin-bottom: 36px;
+      text-align: center;
+      user-select: none;
+      text-shadow: 0 0 12px #ed1e79aa;
+    }
+    .contact-info ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .contact-info ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 22px;
+      user-select: text;
+    }
+    .contact-info ul li i {
+      color: var(--primary-gradient-start, #7b2ff7);
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+      filter: drop-shadow(0 0 8px #f107a3aa);
+    }
+    .contact-info ul li a {
+      color: var(--text-light);
+      transition: color var(--transition);
+      font-weight: 600;
+      user-select: text;
+    }
+    .contact-info ul li a:hover,
+    .contact-info ul li a:focus {
+      color: var(--link-hover-glow);
+      outline: none;
+      text-shadow: 0 0 15px var(--link-hover-glow);
+    }
+    .contact-map {
+      margin-top: 40px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid var(--border-color);
+      box-shadow: 0 0 40px var(--primary-gradient);
+    }
+    .contact-map iframe {
+      width: 100%;
+      height: 220px;
+      border: none;
+      display: block;
+      user-select: none;
+    }
+
+    /* Footer */
+    footer.site-footer {
+      background: var(--dark-header);
+      color: var(--text-muted);
+      padding: 80px 0 40px;
+      border-top: 1.7px solid #332941;
+      user-select: none;
+    }
+    .footer-content {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 56px;
+      flex-wrap: wrap;
+    }
+    .footer-brand,
+    .footer-links,
+    .footer-social {
+      flex: 1;
+      min-width: 220px;
+    }
+    .footer-brand h3 {
+      font-size: 2rem;
+      color: var(--primary-gradient-start, #7b2ff7);
+      margin-bottom: 14px;
+      text-shadow: 0 0 20px #f107a3bb;
+      user-select: none;
+    }
+    .footer-brand p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      user-select: text;
+    }
+    .footer-links h4,
+    .footer-social h4 {
+      font-size: 1.4rem;
+      color: var(--text-light);
+      margin-bottom: 28px;
+      position: relative;
+      user-select: none;
+    }
+    .footer-links ul,
+    .footer-social ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links ul li,
+    .footer-social ul li {
+      margin-bottom: 14px;
+      user-select: text;
+    }
+    .footer-links ul li a,
+    .footer-social ul li a {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      transition: color var(--transition), transform 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .footer-links ul li a:hover,
+    .footer-social ul li a:hover,
+    .footer-links ul li a:focus,
+    .footer-social ul li a:focus {
+      color: var(--link-hover-glow);
+      transform: translateX(-6px);
+      outline: none;
+      text-shadow: 0 0 12px var(--link-hover-glow);
+    }
+    .footer-social ul li a i {
+      color: var(--secondary-gradient-start, #ed1e79);
+      filter: drop-shadow(0 0 10px #ed1e79aa);
+    }
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding-top: 38px;
+      user-select: none;
+      border-top: 1.5px solid #332941;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes pulseBorder {
+      0% {
+        box-shadow:
+          0 0 0 11px var(--primary-gradient),
+          0 0 0 18px rgba(241, 7, 163, 0.22);
+      }
+      100% {
+        box-shadow:
+          0 0 0 14px var(--primary-gradient),
+          0 0 0 23px rgba(241, 7, 163, 0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-title {
+        font-size: 3.9rem;
+      }
+      .hero-subtitle {
+        font-size: 1.55rem;
+      }
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 54px;
+        padding: 42px;
+      }
+      .about-text-content {
+        text-align: center;
+      }
+      .social-icons {
+        justify-content: center;
+      }
+      .contact-content {
+        flex-direction: column;
+        gap: 44px;
+        padding: 38px;
+      }
+      .contact-form,
+      .contact-info {
+        min-width: unset;
+        width: 100%;
+      }
+      .section-title {
+        font-size: 2.9rem;
+        margin-bottom: 45px;
+      }
+      .section-description {
+        font-size: 1.15rem;
+      }
+    }
+    @media (max-width: 768px) {
+      ul.nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 25px;
+        background: var(--dark-card);
+        width: calc(100% - 50px);
+        border-radius: var(--border-radius-card);
+        padding: 22px;
+        box-shadow: var(--shadow-dark);
+        z-index: 9999;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      ul.nav-links.active {
+        display: flex;
+        max-height: 400px;
+      }
+      ul.nav-links li {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 18px;
+      }
+      ul.nav-links li:last-child {
+        margin-bottom: 0;
+      }
+      button.nav-toggle {
+        display: block;
+      }
+      .hero-section {
+        min-height: 80vh;
+        height: auto;
+        padding-bottom: 45px;
+      }
+      .hero-title {
+        font-size: 3.3rem;
+        margin-bottom: 20px;
+      }
+      .hero-subtitle {
+        font-size: 1.35rem;
+        margin-bottom: 42px;
+      }
+      .hero-actions {
+        flex-direction: column;
+        gap: 18px;
+      }
+      .btn {
+        width: 100%;
+      }
+      .about-image-wrapper {
+        width: 260px;
+        height: 260px;
+      }
+      .social-icons a {
+        font-size: 1.9rem;
+      }
+      .audio-list-item {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+      }
+      .audio-list-item audio {
+        width: 100%;
+        margin-top: 18px;
+      }
+      .audio-list-title {
+        flex-grow: unset;
+        width: 100%;
+        margin-bottom: 12px;
+      }
+      .audio-list-item .fa-music {
+        order: -1;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 12px;
+      }
+      .audio-list-item .btn-icon {
+        margin-top: 12px;
+      }
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-brand, .footer-links, .footer-social {
+        min-width: unset;
+        width: 100%;
+      }
+      .footer-links ul, .footer-social ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    @media (max-width: 480px) {
+      .site-logo {
+        font-size: 2.1rem;
+      }
+      .hero-title {
+        font-size: 2.7rem;
+      }
+      .hero-subtitle {
+        font-size: 1.15rem;
+      }
+      .section-title {
+        font-size: 2.3rem;
+        margin-bottom: 38px;
+      }
+      .section-description {
+        font-size: 1.05rem;
+      }
+      .about-content, .contact-content, .audio-card {
+        padding: 34px;
+      }
+      .about-image-wrapper {
+        width: 210px;
+        height: 210px;
+      }
+      .social-icons a {
+        font-size: 1.65rem;
+      }
+      .audio-card h3 {
+        font-size: 1.45rem;
+      }
+      .audio-list-item {
+        padding: 12px 18px;
+        gap: 12px;
+      }
+    }
+    h10{
+        color: #7b2ff7ac;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero-section">
+    <div class="header-overlay"></div>
+    <div class="container">
+      <nav class="main-nav" role="navigation" aria-label="منوی اصلی">
+        <a href="#" class="site-logo" tabindex="0" aria-label="خانه هادی مرجانه">هادی مرجانه</a>
+        <ul class="nav-links" id="navLinks" role="menubar" aria-expanded="false">
+          <li><a href="#about" class="nav-item" role="menuitem" tabindex="0">درباره من</a></li>
+          <li><a href="#featured-audio" class="nav-item" role="menuitem" tabindex="0">برگزیده‌ها</a></li>
+          <li><a href="#audio-library" class="nav-item" role="menuitem" tabindex="0">آرشیو کامل</a></li>
+          <li><a href="#contact" class="nav-item" role="menuitem" tabindex="0">تماس</a></li>
+        </ul>
+        <button
+          class="nav-toggle"
+          aria-label="نمایش/مخفی کردن منو"
+          aria-controls="navLinks"
+          aria-expanded="false"
+          id="navToggleBtn"
+        >
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </nav>
+
+      <div class="hero-content">
+        <h1 class="hero-title">صدای آرامش، نوای بندگی</h1>
+        <p class="hero-subtitle">سفر معنوی با مداحی‌های هادی مرجانه</p>
+        <div class="hero-actions">
+          <a href="#featured-audio" class="btn btn-primary" tabindex="0">گوش دهید</a>
+          <a href="#contact" class="btn btn-secondary" tabindex="0">ارتباط با ما</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section-container about-section" tabindex="0" aria-label="درباره من">
+      <div class="container">
+        <h2 class="section-title">درباره من</h2>
+        <div class="about-content">
+          <div class="about-image-wrapper">
+            <img
+              src="hac.jpg"
+              alt="تصویر هادی مرجانه"
+              class="profile-image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="about-text-content">
+            <p>با ارادت خالصانه به اهل بیت (ع)، اینجانب هادی مرجانه افتخار نوحه‌خوانی و مدیحه‌سرایی را از سالیان دور داشته‌ام. همواره سعی بر این بوده که با خلوص نیت و ارادت قلبی، پیام عاشورا و فضائل ائمه اطهار (ع) را از طریق هنر مداحی به گوش جان شنوندگان برسانم.</p>
+            <p>هدف اصلی این مجموعه، انتشار آثار صوتی بنده برای عموم علاقه‌مندان به فرهنگ غنی اسلامی و عاشورایی است. امید است که این نوای حقیر، مورد رضایت پروردگار و اهل بیت (ع) قرار گیرد و آرامش‌بخش دل‌های شما باشد.</p>
+            <p>در این وب‌سایت می‌توانید به آرشیو کاملی از مداحی‌ها و نوحه‌های بنده دسترسی داشته باشید، از جدیدترین آثار مطلع شوید و برای هماهنگی مراسم با ما در ارتباط باشید.</p>
+            <div class="social-icons" role="presentation">
+              <a href="#" target="_blank" rel="noopener" aria-label="اینستاگرام"><i class="fab fa-instagram"></i></a>
+              <a href="#" target="_blank" rel="noopener" aria-label="تلگرام"><i class="fab fa-telegram-plane"></i></a>
+              <a href="#" target="_blank" rel="noopener" aria-label="یوتیوب"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured-audio" class="section-container featured-audio-section" tabindex="0" aria-label="نوحه‌های برگزیده">
+      <div class="container">
+        <h2 class="section-title">برگزیده‌های اخیر</h2>
+        <div class="audio-grid">
+          <article class="audio-card" tabindex="0" aria-label="ناله شب عاشورا">
+            <h3 class="audio-title"><a href="#" onclick="playAudio('audio/noheh-1.mp3', 'ناله شب عاشورا', 'مداحی جانسوز در رثای سیدالشهدا در شب عاشورای حسینی.'); return false;" tabindex="0">ناله شب عاشورا</a></h3>
+            <div class="audio-player-wrapper">
+              <audio controls src="audio/noheh-1.mp3" preload="none">
+                مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
+              </audio>
+            </div>
+            <p class="audio-description">مداحی جانسوز در رثای سیدالشهدا (ع) در شب عاشورای حسینی.</p>
+            <a href="nohe.html">بیشتر</a>
+
+        </article>
+          <article class="audio-card" tabindex="0" aria-label="علمدار کربلا">
+            <h3 class="audio-title"><a href="#" onclick="playAudio('audio/noheh-2.mp3', 'علمدار کربلا', 'شور و حماسه در وصف رشادت‌های حضرت ابوالفضل العباس.'); return false;" tabindex="0">علمدار کربلا</a></h3>
+            <div class="audio-player-wrapper">
+              <audio controls src="audio/noheh-2.mp3" preload="none">
+                مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
+              </audio>
+              <p> <h1><div></div></h1></p>
+
+            </div>
+            <p class="audio-description">شور و حماسه در وصف رشادت‌های حضرت ابوالفضل العباس (ع).</p>
+            <a href="nohe.html">بیشتر</a>
+
+          </article>
+          
+          <article class="audio-card" tabindex="0" aria-label="یا حسین غریب مادر">
+            <h3 class="audio-title"><a href="#" onclick="playAudio('audio/noheh-3.mp3', 'یا حسین غریب مادر', 'نوحه ماندگار با نوای دلنشین در مظلومیت امام حسین.'); return false;" tabindex="0">یا حسین غریب مادر</a></h3>
+            <div class="audio-player-wrapper">
+              <audio controls src="audio/noheh-3.mp3" preload="none">
+                مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
+              </audio>
+            </div>
+            
+            <p class="audio-description">نوحه ماندگار با نوای دلنشین در مظلومیت امام حسین (ع).</p>
+            <a href="nohe.html">بیشتر</a>
+
+        </article>
+        </div>
+        <p> 
+            <div>
+                <h1>  
+
+                </h1>
+            </div>
+        </p>
+        <p>
+            <var>
+                <h2>   
+                       
+                    <p>   
+                        <h10>.</h10>
+                    </p>
+                </h2>
+            </var>
+        </p>
+        <p>
+            <var>
+                <h2>   
+                       
+                    <p>   
+                        <h10>.</h10>
+                    </p>
+                </h2>
+            </var>
+        </p>
+        <div class="text-center mt-50">
+          <a href="#audio-library" class="btn btn-outline" tabindex="0">مشاهده آرشیو کامل نوحه‌ها</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="audio-library" class="section-container audio-library-section" tabindex="0" aria-label="آرشیو کامل نوحه‌ها">
+      <div class="container">
+        <h2 class="section-title">آرشیو کامل نوحه‌ها</h2>
+        <p class="section-description">در اینجا می‌توانید به تمامی آثار صوتی بنده دسترسی داشته باشید. از طریق جستجو یا دسته‌بندی‌ها، نوحه مورد نظر خود را بیابید.</p>
+        <div class="full-audio-list">
+          <div class="audio-list-item" tabindex="0" aria-label="نوحه ورود به کربلا" role="region">
+            <i class="fas fa-music" aria-hidden="true"></i>
+            <span class="audio-list-title">نوحه ورود به کربلا</span>
+            <audio controls src="audio/full-archive-1.mp3" preload="none"></audio>
+            <button class="btn-icon" aria-label="جزئیات نوحه ورود به کربلا" onclick="playAudio('audio/full-archive-1.mp3', 'نوحه ورود به کربلا', 'توضیحات نوحه ورود به کربلا')" tabindex="0"><i class="fas fa-info-circle"></i></button>
+          </div>
+          <div class="audio-list-item" tabindex="0" aria-label="روضه حضرت رقیه" role="region">
+            <i class="fas fa-music" aria-hidden="true"></i>
+            <span class="audio-list-title">روضه حضرت رقیه (س)</span>
+            <audio controls src="audio/full-archive-2.mp3" preload="none"></audio>
+            <button class="btn-icon" aria-label="جزئیات روضه حضرت رقیه" onclick="playAudio('audio/full-archive-2.mp3', 'روضه حضرت رقیه (س)', 'توضیحات روضه حضرت رقیه')" tabindex="0"><i class="fas fa-info-circle"></i></button>
+          </div>
+          <div class="audio-list-item" tabindex="0" aria-label="نوحه حضرت علی‌اصغر" role="region">
+            <i class="fas fa-music" aria-hidden="true"></i>
+            <span class="audio-list-title">نوحه حضرت علی‌اصغر (ع)</span>
+            <audio controls src="audio/full-archive-3.mp3" preload="none"></audio>
+            <button class="btn-icon" aria-label="جزئیات نوحه حضرت علی‌اصغر" onclick="playAudio('audio/full-archive-3.mp3', 'نوحه حضرت علی‌اصغر (ع)', 'توضیحات نوحه حضرت علی‌اصغر')" tabindex="0"><i class="fas fa-info-circle"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-container contact-section" tabindex="0" aria-label="تماس با من">
+      <div class="container">
+        <h2 class="section-title">تماس با من</h2>
+        <p class="section-description">برای هماهنگی مراسم، ارسال نظرات و پیشنهادات، یا هرگونه همکاری، از طریق فرم زیر با من در ارتباط باشید.</p>
+        <div class="contact-content">
+          <form class="contact-form" onsubmit="handleContactForm(event)" novalidate>
+            <div class="form-group">
+              <label for="name">نام و نام خانوادگی:</label>
+              <input type="text" id="name" name="name" required placeholder="مثال: علی احمدی" />
+            </div>
+            <div class="form-group">
+              <label for="email">ایمیل:</label>
+              <input type="email" id="email" name="email" required placeholder="مثال: your.email@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="subject">موضوع:</label>
+              <input type="text" id="subject" name="subject" placeholder="مثال: درخواست مداحی" />
+            </div>
+            <div class="form-group">
+              <label for="message">پیام شما:</label>
+              <textarea id="message" name="message" rows="6" required placeholder="پیام خود را اینجا بنویسید..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full-width">ارسال پیام</button>
+          </form>
+          <div
+            class="contact-info"
+            aria-live="polite"
+            role="region"
+            aria-atomic="true"
+            tabindex="0"
+            style="outline:none;"
+          >
+            <h3>راه‌های ارتباطی دیگر</h3>
+            <ul>
+              <li><i class="fas fa-envelope" aria-hidden="true"></i> ایمیل: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+              <li><i class="fas fa-phone-alt" aria-hidden="true"></i> تلفن (در صورت تمایل): <a href="tel:+989123456789">+۹۸ ۹۱۲ ۳۴۵ ۶۷۸۹</a></li>
+              <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> آدرس (در صورت تمایل): [شهر], [کشور]</li>
+            </ul>
+            <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104889.30058862817!2d51.327668616117075!3d35.69838031541014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e004944d1887b%3A0x6b801a2f4477215b!2sTehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sfr!4v1716922119123!5m2!1sen!2sfr"
+                width="100%"
+                height="220"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>هادی مرجانه</h3>
+          <p>نوای معنویت، آرامش دل‌ها</p>
+        </div>
+        <div class="footer-links">
+          <h4>دسترسی سریع</h4>
+          <ul>
+            <li><a href="#about">درباره ما</a></li>
+            <li><a href="#featured-audio">مداحی‌های برگزیده</a></li>
+            <li><a href="#audio-library">آرشیو کامل</a></li>
+            <li><a href="#contact">تماس با ما</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>ما را دنبال کنید</h4>
+          <ul>
+            <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> اینستاگرام</a></li>
+            <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-telegram-plane"></i> تلگرام</a></li>
+            <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> یوتیوب</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 تمامی حقوق این سایت متعلق به هادی مرجانه می‌باشد.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggleBtn = document.getElementById('navToggleBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggleBtn.addEventListener('click', () => {
+      const expanded = navToggleBtn.getAttribute('aria-expanded') === 'true';
+      navToggleBtn.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('active');
+      if (!expanded) {
+        navLinks.querySelector('a').focus();
+      } else {
+        navToggleBtn.focus();
+      }
+    });
+
+    // Audio playback function with fallback
+    function playAudio(src, title, description) {
+      try {
+        const audio = new Audio(src);
+        audio.volume = 0.85;
+        audio.play();
+        setTimeout(() => {
+          alert(`در حال پخش: ${title}\n${description}`);
+        }, 400);
+      } catch {
+        alert('خطا در پخش فایل صوتی.');
+      }
+    }
+    // Contact form handler
+    function handleContactForm(event) {
+      event.preventDefault();
+      const form = event.target;
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      alert('پیام شما با موفقیت ارسال شد! متشکریم.');
+      form.reset();
+    }
+  </script>
+</body>
+</html>

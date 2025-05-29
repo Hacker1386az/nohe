@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="صفحه اختصاصی نوحه [نام نوحه] از هادی مرجانه" />
+  <meta name="keywords" content="نوحه, مداحی, [نام نوحه], اهل بیت, حسین, عاشورا, هادی مرجانه" />
+  <title>نوحه [نام نوحه] | هادی مرجانه</title>
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;300;400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    /*
+      You can either link your existing style.css file here if you extract it,
+      or copy the relevant parts of your current <style> block.
+      For simplicity, I'm assuming you'll either copy the whole style block
+      or link an external CSS file.
+    */
+
+    :root {
+      --dark-bg: #0f0c29;
+      --dark-card: #1c1a2b;
+      --dark-header: #121024;
+      --primary-gradient: linear-gradient(135deg, #7b2ff7 0%, #f107a3 100%);
+      --secondary-gradient: linear-gradient(135deg, #662d8c 0%, #ed1e79 100%);
+      --text-light: #f7f7ff;
+      --text-muted: #b8b8cb;
+      --border-color: rgba(247, 26, 114, 0.5);
+      --link-hover-glow: #f107a3;
+      --shadow-glow: 0 0 15px #f107a3aa;
+      --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.85);
+
+      --font-family: 'Vazirmatn', sans-serif;
+
+      --border-radius-card: 14px;
+      --border-radius-button: 9px;
+
+      --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Reset and global */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: var(--dark-bg);
+      color: var(--text-light);
+      font-family: var(--font-family);
+      direction: rtl;
+      text-align: right;
+      line-height: 1.85;
+      overflow-x: hidden;
+    }
+    a {
+      color: var(--primary-gradient-start);
+      text-decoration: none;
+      background-image: linear-gradient(to right, #d4145a, #fbb03b);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      transition: filter var(--transition);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    a:hover, a:focus {
+      filter: drop-shadow(0 0 6px var(--link-hover-glow));
+      outline: none;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    /* Sections */
+    .section-container {
+      padding: 110px 0 90px;
+      position: relative;
+      z-index: 1;
+    }
+    .section-title {
+      font-size: 3.8rem;
+      font-weight: 900;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      margin-bottom: 65px;
+      position: relative;
+      letter-spacing: 0.06em;
+      user-select: none;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 140px;
+      height: 5px;
+      background: var(--secondary-gradient);
+      bottom: -20px;
+      right: 50%;
+      transform: translateX(50%);
+      border-radius: 3px;
+      box-shadow: 0 0 15px var(--link-hover-glow);
+    }
+    .section-description {
+      max-width: 850px;
+      margin: 0 auto 70px;
+      color: var(--text-muted);
+      font-size: 1.25rem;
+      text-align: center;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      border-radius: var(--border-radius-button);
+      font-weight: 700;
+      font-size: 1.15rem;
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition);
+      text-shadow: 0 0 8px rgba(241, 7, 163, 0.8);
+      user-select: none;
+      box-shadow:
+        0 0 12px #f107a3aa,
+        inset 0 0 14px #7b2ff7aa;
+    }
+    .btn-primary {
+      background: var(--primary-gradient);
+      color: var(--text-light);
+      border: 1.8px solid #f107a3cc;
+      text-shadow: 0 0 8px #f107a3cc;
+      filter: drop-shadow(0 0 10px #f107a3cc);
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      transform: scale(1.07);
+      filter: drop_shadow(0 0 20px #f107a3ee);
+      outline: none;
+      box-shadow:
+        0 0 20px #f107a3ff,
+        inset 0 0 25px #7b2ff7cc;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-light);
+      border: 2px solid var(--secondary-gradient);
+      box-shadow:
+        0 0 8px #ed1e7988;
+    }
+    .btn-secondary:hover,
+    .btn-secondary:focus {
+      background: var(--secondary-gradient);
+      box-shadow:
+        0 0 20px #ed1e79cc,
+        inset 0 0 20px #f107a3cc;
+      color: var(--text-light);
+      transform: scale(1.05);
+      outline: none;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary-gradient);
+      color: var(--text-light);
+    }
+    .btn-outline:hover,
+    .btn-outline:focus {
+      background: var(--primary-gradient);
+      box-shadow: 0 0 15px #7b2ff7cc;
+      color: var(--text-light);
+      outline: none;
+      transform: translateY(-2px);
+    }
+
+    /* Header & Hero */
+    header.hero-section {
+      height: 50vh; /* Reduced height for detail page header */
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 50px;
+      background:
+        linear-gradient(rgba(15, 12, 41, 0.85), rgba(15, 12, 41, 0.85)),
+        url('hero-bg-dark.jpg') center/cover no-repeat fixed; /* Make sure this path is correct */
+      color: var(--text-light);
+      text-align: center;
+      overflow: hidden;
+    }
+    .header-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: rgba(15, 12, 41, 0.6);
+      backdrop-filter: blur(8px);
+      mix-blend-mode: multiply;
+    }
+    header .container {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    nav.main-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 35px 0;
+    }
+    a.site-logo {
+      font-size: 2.8rem;
+      font-weight: 900;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 18px #f107a3cc;
+      user-select: none;
+      cursor: default;
+    }
+    ul.nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    a.nav-item {
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 10px;
+      transition: background-color var(--transition), box-shadow var(--transition);
+      position: relative;
+      color: var(--text-light);
+    }
+    a.nav-item:hover,
+    a.nav-item:focus {
+      background: var(--secondary-gradient);
+      box-shadow:
+        0 0 15px #ed1e7988,
+        inset 0 0 15px #7b2ff7aa;
+      outline: none;
+    }
+    button.nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      font-size: 2rem;
+      color: var(--text-light);
+      cursor: pointer;
+      z-index: 10;
+    }
+    /* Hero content - adjusted for single page */
+    .hero-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 0; /* No need for padding here */
+    }
+    .hero-title {
+      font-size: 4.2rem; /* Slightly smaller for detail page */
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+      text-shadow:
+        0 0 12px #f107a3cc,
+        0 8px 20px #7b2ff7bb;
+      animation: fadeInDown 1s ease forwards;
+      user-select: none;
+    }
+    .hero-subtitle {
+      font-size: 1.65rem; /* Slightly smaller for detail page */
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 0; /* No need for margin here */
+      animation: fadeInUp 1.3s ease forwards;
+      letter-spacing: 0.02em;
+    }
+    .hero-actions {
+      display: none; /* Not needed on detail page header */
+    }
+
+    /* Single نوحه Section */
+    .noheh-detail-section {
+      background: var(--dark-bg);
+      padding-top: 60px;
+      padding-bottom: 90px;
+    }
+    .noheh-detail-card {
+      background: var(--dark-card);
+      border-radius: var(--border-radius-card);
+      padding: 55px 60px;
+      box-shadow: var(--shadow-dark);
+      margin: 0 auto;
+      max-width: 900px; /* Adjust max-width as needed */
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      border: 2px solid var(--border-color);
+    }
+    .noheh-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .noheh-main-title {
+      font-size: 3rem;
+      font-weight: 900;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+      letter-spacing: 0.03em;
+      text-shadow: 0 0 15px var(--link-hover-glow);
+    }
+    .noheh-meta {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+    }
+    .noheh-player-wrapper {
+      margin: 0 auto 30px;
+      width: 100%;
+      max-width: 600px;
+      filter: drop-shadow(0 0 18px #f107a3cc);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--primary-gradient);
+    }
+    .noheh-player-wrapper audio {
+      width: 100%;
+      border-radius: 10px;
+      outline: none;
+      background-color: #222;
+      filter: invert(1) hue-rotate(185deg);
+      -webkit-filter: invert(1) hue-rotate(185deg);
+      display: block;
+    }
+    .noheh-description {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      line-height: 2;
+      margin-bottom: 40px;
+      text-align: justify; /* Justify text for better readability */
+    }
+    .noheh-lyrics-section {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1.5px dashed var(--border-color);
+    }
+    .noheh-lyrics-section h3 {
+      font-size: 2.2rem;
+      color: var(--secondary-gradient);
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 0 12px #ed1e79aa;
+    }
+    .noheh-lyrics {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      line-height: 2.2;
+      white-space: pre-wrap; /* Preserves whitespace and line breaks */
+      text-align: center;
+      max-height: 400px; /* Example max height for lyrics */
+      overflow-y: auto; /* Add scroll for long lyrics */
+      padding: 15px;
+      background: #15112f;
+      border-radius: 10px;
+      border: 1px solid rgba(247, 26, 114, 0.3);
+      box-shadow: inset 0 0 10px rgba(123, 47, 247, 0.2);
+    }
+    .noheh-actions {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+
+    /* Footer - (copy from your existing footer) */
+    footer.site-footer {
+      background: var(--dark-header);
+      color: var(--text-muted);
+      padding: 80px 0 40px;
+      border-top: 1.7px solid #332941;
+      user-select: none;
+    }
+    .footer-content {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 56px;
+      flex-wrap: wrap;
+    }
+    .footer-brand,
+    .footer-links,
+    .footer-social {
+      flex: 1;
+      min-width: 220px;
+    }
+    .footer-brand h3 {
+      font-size: 2rem;
+      color: var(--primary-gradient-start, #7b2ff7);
+      margin-bottom: 14px;
+      text-shadow: 0 0 20px #f107a3bb;
+      user-select: none;
+    }
+    .footer-brand p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      user-select: text;
+    }
+    .footer-links h4,
+    .footer-social h4 {
+      font-size: 1.4rem;
+      color: var(--text-light);
+      margin-bottom: 28px;
+      position: relative;
+      user-select: none;
+    }
+    .footer-links ul,
+    .footer-social ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links ul li,
+    .footer-social ul li {
+      margin-bottom: 14px;
+      user-select: text;
+    }
+    .footer-links ul li a,
+    .footer-social ul li a {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      transition: color var(--transition), transform 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .footer-links ul li a:hover,
+    .footer-social ul li a:hover,
+    .footer-links ul li a:focus,
+    .footer-social ul li a:focus {
+      color: var(--link-hover-glow);
+      transform: translateX(-6px);
+      outline: none;
+      text-shadow: 0 0 12px var(--link-hover-glow);
+    }
+    .footer-social ul li a i {
+      color: var(--secondary-gradient-start, #ed1e79);
+      filter: drop-shadow(0 0 10px #ed1e79aa);
+    }
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding-top: 38px;
+      user-select: none;
+      border-top: 1.5px solid #332941;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes pulseBorder {
+      0% {
+        box-shadow:
+          0 0 0 11px var(--primary-gradient),
+          0 0 0 18px rgba(241, 7, 163, 0.22);
+      }
+      100% {
+        box-shadow:
+          0 0 0 14px var(--primary-gradient),
+          0 0 0 23px rgba(241, 7, 163, 0);
+      }
+    }
+
+    /* Responsive adjustments for detail page */
+    @media (max-width: 992px) {
+      .hero-title {
+        font-size: 3.5rem;
+      }
+      .hero-subtitle {
+        font-size: 1.4rem;
+      }
+      .noheh-detail-card {
+        padding: 40px;
+      }
+      .noheh-main-title {
+        font-size: 2.5rem;
+      }
+      .noheh-description {
+        font-size: 1.1rem;
+      }
+      .noheh-lyrics-section h3 {
+        font-size: 1.9rem;
+      }
+    }
+    @media (max-width: 768px) {
+      /* Mobile nav remains the same */
+      ul.nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 25px;
+        background: var(--dark-card);
+        width: calc(100% - 50px);
+        border-radius: var(--border-radius-card);
+        padding: 22px;
+        box-shadow: var(--shadow-dark);
+        z-index: 9999;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      ul.nav-links.active {
+        display: flex;
+        max-height: 400px;
+      }
+      ul.nav-links li {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 18px;
+      }
+      ul.nav-links li:last-child {
+        margin-bottom: 0;
+      }
+      button.nav-toggle {
+        display: block;
+      }
+      .hero-section {
+        min-height: 30vh;
+        height: auto;
+        padding-bottom: 30px;
+      }
+      .hero-title {
+        font-size: 2.8rem;
+      }
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+      .noheh-detail-card {
+        padding: 30px;
+      }
+      .noheh-main-title {
+        font-size: 2.1rem;
+      }
+      .noheh-lyrics {
+        padding: 10px;
+      }
+    }
+    @media (max-width: 480px) {
+      .site-logo {
+        font-size: 2.1rem;
+      }
+      .hero-title {
+        font-size: 2.3rem;
+      }
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+      .noheh-detail-card {
+        padding: 25px;
+      }
+      .noheh-main-title {
+        font-size: 1.8rem;
+      }
+      .noheh-description {
+        font-size: 1rem;
+      }
+      .noheh-lyrics-section h3 {
+        font-size: 1.6rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header class="hero-section">
+    <div class="header-overlay"></div>
+    <div class="container">
+      <nav class="main-nav" role="navigation" aria-label="منوی اصلی">
+        <a href="index.html" class="site-logo" tabindex="0" aria-label="بازگشت به صفحه اصلی هادی مرجانه">هادی مرجانه</a>
+        <ul class="nav-links" id="navLinks" role="menubar" aria-expanded="false">
+          <a href="index.html#featured-audio" class="btn btn-secondary" tabindex="0">
+            <i class="fas fa-arrow-left"></i> خانه </a>
+
+        </ul>
+        <button
+          class="nav-toggle"
+          aria-label="نمایش/مخفی کردن منو"
+          aria-controls="navLinks"
+          aria-expanded="false"
+          id="navToggleBtn"
+        >
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </nav>
+
+      <div class="hero-content">
+        <h1 class="hero-title">ناله شب عاشورا</h1> 
+        <div></div>
+        <p>
+            <h1>
+                .
+            </h1>
+        </p>
+       </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-container noheh-detail-section" tabindex="0" aria-label="صفحه نوحه ناله شب عاشورا">
+      <div class="container">
+        <div class="noheh-detail-card">
+          <div class="noheh-header">
+            <h2 class="noheh-main-title">ناله شب عاشورا</h2>
+            <p class="noheh-meta">مداح: هادی مرجانه | تاریخ انتشار: محرم ۱۴۰۲ | دسته بندی: شب عاشورا</p>
+          </div>
+
+          <div class="noheh-player-wrapper">
+            <audio controls src="audio/noheh-1.mp3" preload="metadata">
+              مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
+            </audio>
+          </div>
+
+          <p class="noheh-description">
+            این نوحه جانسوز، به روایت حوادث و حال و هوای شب عاشورا، شبی که امام حسین (ع) و یاران باوفایشان آماده وداع با دنیا و استقبال از شهادت شدند، می‌پردازد. با نوای دلنشین و تأثیرگذار، تلاش شده تا عمق مصیبت و ایثار این شب عظیم به تصویر کشیده شود. این اثر برای ارادتمندان به ساحت سیدالشهدا (ع) و علاقه‌مندان به مداحی‌های عاشورایی تقدیم می‌گردد.
+            <br><br>
+            در این نوحه، به مقام شامخ امام حسین (ع) و فداکاری‌های ایشان و یارانشان اشاره شده و شنونده را به فضایی معنوی و پر از حزن و اندوه دعوت می‌کند. امید است که این اثر، موجب افزایش بصیرت و معرفت شیعیان به قیام حسینی شود.
+          </p>
+
+          <div class="noheh-lyrics-section">
+            <h3>متن نوحه</h3>
+            <div class="noheh-lyrics">
+              شب عاشوراست امشب، کربلا غوغاست امشب
+              حسین تنهاست امشب، زینب بی‌پناست امشب
+              ***
+              صدای ناله می‌آید، از حرم بوی غم آید
+              ساقی تشنه‌لبان، دستش از تن جدا آید
+              ***
+              ای دلبر زینب، ای مظلوم کربلا
+              برگرد ای حسین جان، از این دشت بلا
+              ***
+              عطش بر لب، زخم بر پیکر
+              فدای راه حق، جان داد آن سرور
+            </div>
+          </div>
+
+          <div class="noheh-actions">
+            <a href="audio/noheh-1.mp3" download="ناله-شب-عاشورا-هادی-مرجانه.mp3" class="btn btn-primary" tabindex="0">
+              <i class="fas fa-download"></i> دانلود نوحه
+            </a>
+            <a href="index.html#featured-audio" class="btn btn-secondary" tabindex="0">
+              <i class="fas fa-arrow-left"></i> بازگشت به صفحه اصلی
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>هادی مرجانه</h3>
+        <p>صدای آرامش، نوای بندگی</p>
+        <p>وب‌سایت رسمی نوحه‌خوان و مداح اهل بیت (ع)</p>
+      </div>
+      <div class="footer-links">
+        <h4>لینک‌های سریع</h4>
+        <ul>
+          <li><a href="index.html#about"><i class="fas fa-chevron-left"></i> درباره من</a></li>
+          <li><a href="index.html#featured-audio"><i class="fas fa-chevron-left"></i> برگزیده‌ها</a></li>
+          <li><a href="index.html#audio-library"><i class="fas fa-chevron-left"></i> آرشیو کامل</a></li>
+          <li><a href="index.html#contact"><i class="fas fa-chevron-left"></i> تماس با ما</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>ما را دنبال کنید</h4>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> اینستاگرام</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-telegram-plane"></i> تلگرام</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> یوتیوب</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 هادی مرجانه. تمامی حقوق محفوظ است.</p>
+    </div>
+  </footer>
+
+  <script>
+    // This script can be common for all pages if you decide to put it in a separate file.
+    document.addEventListener('DOMContentLoaded', () => {
+      const navToggleBtn = document.getElementById('navToggleBtn');
+      const navLinks = document.getElementById('navLinks');
+
+      if (navToggleBtn && navLinks) {
+        navToggleBtn.addEventListener('click', () => {
+          const expanded = navLinks.getAttribute('aria-expanded') === 'true' || false;
+          navLinks.setAttribute('aria-expanded', !expanded);
+          navLinks.classList.toggle('active');
+        });
+
+        // Close nav on link click for mobile
+        navLinks.querySelectorAll('.nav-item').forEach(item => {
+          item.addEventListener('click', () => {
+            if (window.innerWidth <= 768) { // Adjust breakpoint if needed
+              navLinks.classList.remove('active');
+              navLinks.setAttribute('aria-expanded', 'false');
+            }
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
