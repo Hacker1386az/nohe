@@ -2,10 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="صفحه اختصاصی نوحه [نام نوحه] از هادی مرجانه" />
-  <meta name="keywords" content="نوحه, مداحی, [نام نوحه], اهل بیت, حسین, عاشورا, هادی مرجانه" />
-  <title>نوحه [نام نوحه] | هادی مرجانه</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <meta name="description" content="صفحه اختصاصی نوحه ناله شب عاشورا از هادی مرجانه. گوش دهید، متن نوحه را بخوانید و دانلود کنید." /> <meta name="keywords" content="نوحه, مداحی, ناله شب عاشورا, اهل بیت, حسین, عاشورا, هادی مرجانه, دانلود نوحه, متن نوحه" /> <title>نوحه ناله شب عاشورا | هادی مرجانه</title>
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
@@ -27,13 +24,6 @@
     referrerpolicy="no-referrer"
   />
   <style>
-    /*
-      You can either link your existing style.css file here if you extract it,
-      or copy the relevant parts of your current <style> block.
-      For simplicity, I'm assuming you'll either copy the whole style block
-      or link an external CSS file.
-    */
-
     :root {
       --dark-bg: #0f0c29;
       --dark-card: #1c1a2b;
@@ -68,9 +58,11 @@
       text-align: right;
       line-height: 1.85;
       overflow-x: hidden;
+      /* Add touch-action for better scroll performance on some touch devices */
+      touch-action: pan-y;
     }
     a {
-      color: var(--primary-gradient-start);
+      color: var(--primary-gradient-start); /* This variable is not defined in root, check if intended */
       text-decoration: none;
       background-image: linear-gradient(to right, #d4145a, #fbb03b);
       background-clip: text;
@@ -144,6 +136,8 @@
       box-shadow:
         0 0 12px #f107a3aa,
         inset 0 0 14px #7b2ff7aa;
+      /* Add tap highlight color for better touch feedback */
+      -webkit-tap-highlight-color: rgba(241, 7, 163, 0.4);
     }
     .btn-primary {
       background: var(--primary-gradient);
@@ -155,7 +149,7 @@
     .btn-primary:hover,
     .btn-primary:focus {
       transform: scale(1.07);
-      filter: drop_shadow(0 0 20px #f107a3ee);
+      filter: drop-shadow(0 0 20px #f107a3ee);
       outline: none;
       box-shadow:
         0 0 20px #f107a3ff,
@@ -200,12 +194,16 @@
       flex-direction: column;
       justify-content: space-between;
       padding-bottom: 50px;
+      /* Use a responsive background image if possible, or ensure current one is optimized */
       background:
         linear-gradient(rgba(15, 12, 41, 0.85), rgba(15, 12, 41, 0.85)),
         url('hero-bg-dark.jpg') center/cover no-repeat fixed; /* Make sure this path is correct */
       color: var(--text-light);
       text-align: center;
       overflow: hidden;
+      /* For fixed backgrounds on mobile, consider background-attachment: scroll; or use a media query
+         fixed is often buggy on mobile, but if it works on yours, keep it. */
+      /* @media (max-width: 768px) { background-attachment: scroll; } */
     }
     .header-overlay {
       position: absolute;
@@ -253,6 +251,11 @@
       transition: background-color var(--transition), box-shadow var(--transition);
       position: relative;
       color: var(--text-light);
+      /* Ensure adequate tap target size */
+      min-height: 44px; /* Recommended minimum tap target size */
+      display: flex; /* To center text for min-height */
+      align-items: center; /* To center text for min-height */
+      justify-content: center; /* To center text for min-height */
     }
     a.nav-item:hover,
     a.nav-item:focus {
@@ -270,6 +273,9 @@
       color: var(--text-light);
       cursor: pointer;
       z-index: 10;
+      /* Ensure adequate tap target size */
+      min-width: 44px;
+      min-height: 44px;
     }
     /* Hero content - adjusted for single page */
     .hero-content {
@@ -320,6 +326,7 @@
       flex-direction: column;
       gap: 35px;
       border: 2px solid var(--border-color);
+      user-select: text; /* Allow text selection within the card */
     }
     .noheh-header {
       text-align: center;
@@ -353,9 +360,13 @@
       border-radius: 10px;
       outline: none;
       background-color: #222;
+      /* Using filter for audio controls styling might cause issues on some mobile browsers.
+         Consider custom audio controls for consistent styling across devices if needed. */
       filter: invert(1) hue-rotate(185deg);
       -webkit-filter: invert(1) hue-rotate(185deg);
       display: block;
+      /* Add content-visibility for better mobile performance if the player is complex */
+      content-visibility: auto;
     }
     .noheh-description {
       font-size: 1.2rem;
@@ -371,7 +382,9 @@
     }
     .noheh-lyrics-section h3 {
       font-size: 2.2rem;
-      color: var(--secondary-gradient);
+      background: var(--secondary-gradient); /* Use gradient for heading */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       text-align: center;
       margin-bottom: 30px;
       text-shadow: 0 0 12px #ed1e79aa;
@@ -389,6 +402,7 @@
       border-radius: 10px;
       border: 1px solid rgba(247, 26, 114, 0.3);
       box-shadow: inset 0 0 10px rgba(123, 47, 247, 0.2);
+      -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
     }
     .noheh-actions {
       display: flex;
@@ -461,6 +475,9 @@
       align-items: center;
       gap: 10px;
       text-decoration: none;
+      /* Ensure adequate tap target size */
+      min-height: 38px; /* Slightly smaller than main nav, but still tappable */
+      min-width: 38px;
     }
     .footer-links ul li a:hover,
     .footer-social ul li a:hover,
@@ -592,6 +609,10 @@
       .noheh-lyrics {
         padding: 10px;
       }
+      /* Ensure buttons are full width on small screens */
+      .noheh-actions .btn {
+        width: 100%;
+      }
     }
     @media (max-width: 480px) {
       .site-logo {
@@ -616,7 +637,6 @@
         font-size: 1.6rem;
       }
     }
-
   </style>
 </head>
 <body>
@@ -626,9 +646,11 @@
       <nav class="main-nav" role="navigation" aria-label="منوی اصلی">
         <a href="index.html" class="site-logo" tabindex="0" aria-label="بازگشت به صفحه اصلی هادی مرجانه">هادی مرجانه</a>
         <ul class="nav-links" id="navLinks" role="menubar" aria-expanded="false">
-          <a href="index.html#featured-audio" class="btn btn-secondary" tabindex="0">
-            <i class="fas fa-arrow-left"></i> خانه </a>
 
+          <li>
+            <a href="index.html" class="nav-item btn btn-secondary" tabindex="0"> <i class="fas fa-arrow-left"></i> بازگشت
+            </a>
+          </li>
         </ul>
         <button
           class="nav-toggle"
@@ -642,14 +664,8 @@
       </nav>
 
       <div class="hero-content">
-        <h1 class="hero-title">ناله شب عاشورا</h1> 
-        <div></div>
-        <p>
-            <h1>
-                .
-            </h1>
-        </p>
-       </div>
+        <h1 class="hero-title">ناله شب عاشورا</h1>
+        <p class="hero-subtitle">جزئیات و متن نوحه</p> </div>
     </div>
   </header>
 
@@ -695,8 +711,7 @@
             <a href="audio/noheh-1.mp3" download="ناله-شب-عاشورا-هادی-مرجانه.mp3" class="btn btn-primary" tabindex="0">
               <i class="fas fa-download"></i> دانلود نوحه
             </a>
-            <a href="index.html#featured-audio" class="btn btn-secondary" tabindex="0">
-              <i class="fas fa-arrow-left"></i> بازگشت به صفحه اصلی
+            <a href="index.html#audio-library" class="btn btn-secondary" tabindex="0"> <i class="fas fa-arrow-left"></i> بازگشت به آرشیو
             </a>
           </div>
         </div>
@@ -709,40 +724,37 @@
       <div class="footer-brand">
         <h3>هادی مرجانه</h3>
         <p>صدای آرامش، نوای بندگی</p>
-        <p>وب‌سایت رسمی نوحه‌خوان و مداح اهل بیت (ع)</p>
-      </div>
+        <p>وب‌سایت رسمی نوحه‌خوان و مداح اهل بیت (ع).</p> </div>
       <div class="footer-links">
         <h4>لینک‌های سریع</h4>
         <ul>
-          <li><a href="index.html#about"><i class="fas fa-chevron-left"></i> درباره من</a></li>
-          <li><a href="index.html#featured-audio"><i class="fas fa-chevron-left"></i> برگزیده‌ها</a></li>
-          <li><a href="index.html#audio-library"><i class="fas fa-chevron-left"></i> آرشیو کامل</a></li>
-          <li><a href="index.html#contact"><i class="fas fa-chevron-left"></i> تماس با ما</a></li>
+          <li><a href="index.html#about" tabindex="0"><i class="fas fa-chevron-left"></i> درباره من</a></li>
+          <li><a href="index.html#featured-audio" tabindex="0"><i class="fas fa-chevron-left"></i> برگزیده‌ها</a></li>
+          <li><a href="index.html#audio-library" tabindex="0"><i class="fas fa-chevron-left"></i> آرشیو کامل</a></li>
+          <li><a href="index.html#contact" tabindex="0"><i class="fas fa-chevron-left"></i> تماس با ما</a></li>
         </ul>
       </div>
       <div class="footer-social">
         <h4>ما را دنبال کنید</h4>
         <ul>
-          <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> اینستاگرام</a></li>
-          <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-telegram-plane"></i> تلگرام</a></li>
-          <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> یوتیوب</a></li>
+          <li><a href="#" target="_blank" rel="noopener" tabindex="0"><i class="fab fa-instagram"></i> اینستاگرام</a></li>
+          <li><a href="#" target="_blank" rel="noopener" tabindex="0"><i class="fab fa-telegram-plane"></i> تلگرام</a></li>
+          <li><a href="#" target="_blank" rel="noopener" tabindex="0"><i class="fab fa-youtube"></i> یوتیوب</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 هادی مرجانه. تمامی حقوق محفوظ است.</p>
-    </div>
+      <p>&copy; 2023 هادی مرجانه. تمامی حقوق محفوظ است.</p> <p>طراحی شده توسط محمد امین مرادی</p> </div>
   </footer>
 
   <script>
-    // This script can be common for all pages if you decide to put it in a separate file.
     document.addEventListener('DOMContentLoaded', () => {
       const navToggleBtn = document.getElementById('navToggleBtn');
       const navLinks = document.getElementById('navLinks');
 
       if (navToggleBtn && navLinks) {
         navToggleBtn.addEventListener('click', () => {
-          const expanded = navLinks.getAttribute('aria-expanded') === 'true' || false;
+          const expanded = navLinks.getAttribute('aria-expanded') === 'true';
           navLinks.setAttribute('aria-expanded', !expanded);
           navLinks.classList.toggle('active');
         });
@@ -757,6 +769,17 @@
           });
         });
       }
+
+      // Automatically pause other audio players if one starts
+      document.querySelectorAll('audio').forEach(audioElement => {
+        audioElement.addEventListener('play', function() {
+          document.querySelectorAll('audio').forEach(otherAudioElement => {
+            if (otherAudioElement !== this) {
+              otherAudioElement.pause();
+            }
+          });
+        });
+      });
     });
   </script>
 </body>
