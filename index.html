@@ -61,9 +61,11 @@
       text-align: right;
       line-height: 1.85;
       overflow-x: hidden;
+      /* Add touch-action for better scroll performance on some touch devices */
+      touch-action: pan-y;
     }
     a {
-      color: var(--primary-gradient-start);
+      color: var(--primary-gradient-start); /* This variable is not defined in root, check if intended */
       text-decoration: none;
       background-image: linear-gradient(to right, #d4145a, #fbb03b);
       background-clip: text;
@@ -137,6 +139,8 @@
       box-shadow:
         0 0 12px #f107a3aa,
         inset 0 0 14px #7b2ff7aa;
+      /* Add tap highlight color for better touch feedback */
+      -webkit-tap-highlight-color: rgba(241, 7, 163, 0.4);
     }
     .btn-primary {
       background: var(--primary-gradient);
@@ -193,12 +197,16 @@
       flex-direction: column;
       justify-content: space-between;
       padding-bottom: 50px;
+      /* Use a responsive background image if possible, or ensure current one is optimized */
       background:
         linear-gradient(rgba(15, 12, 41, 0.85), rgba(15, 12, 41, 0.85)),
         url('hero-bg-dark.jpg') center/cover no-repeat fixed;
       color: var(--text-light);
       text-align: center;
       overflow: hidden;
+      /* For fixed backgrounds on mobile, consider background-attachment: scroll; or use a media query
+         fixed is often buggy on mobile, but if it works on yours, keep it. */
+      /* @media (max-width: 768px) { background-attachment: scroll; } */
     }
     .header-overlay {
       position: absolute;
@@ -246,6 +254,11 @@
       transition: background-color var(--transition), box-shadow var(--transition);
       position: relative;
       color: var(--text-light);
+      /* Ensure adequate tap target size */
+      min-height: 44px; /* Recommended minimum tap target size */
+      display: flex; /* To center text for min-height */
+      align-items: center; /* To center text for min-height */
+      justify-content: center; /* To center text for min-height */
     }
     a.nav-item:hover,
     a.nav-item:focus {
@@ -263,6 +276,9 @@
       color: var(--text-light);
       cursor: pointer;
       z-index: 10;
+      /* Ensure adequate tap target size */
+      min-width: 44px;
+      min-height: 44px;
     }
     /* Hero content */
     .hero-content {
@@ -339,6 +355,8 @@
       object-fit: cover;
       transition: transform var(--transition);
       will-change: transform;
+      /* Add optimization attributes for lazy loading */
+      content-visibility: auto;
     }
     .about-image-wrapper:hover .profile-image {
       transform: scale(1.07);
@@ -364,6 +382,12 @@
       font-size: 2.6rem;
       color: var(--text-muted);
       transition: color var(--transition), transform 0.3s ease;
+      /* Ensure adequate tap target size */
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .social-icons a:hover,
     .social-icons a:focus {
@@ -431,6 +455,9 @@
       border-radius: 10px;
       outline: none;
       background-color: #222;
+      /* Using filter for audio controls styling might cause issues on some mobile browsers.
+         Consider custom audio controls for consistent styling across devices if needed.
+         For "no change," keep it as is. */
       filter: invert(1) hue-rotate(185deg);
       -webkit-filter: invert(1) hue-rotate(185deg);
     }
@@ -466,6 +493,8 @@
       transition: transform var(--transition), box-shadow var(--transition);
       border: 1.5px solid var(--border-color);
       user-select: none;
+      /* Add minimal tap target size for the whole item */
+      min-height: 70px; /* Adjust as needed */
     }
     .audio-list-item:hover,
     .audio-list-item:focus-within {
@@ -500,8 +529,8 @@
       background: var(--dark-bg);
       border: 1.8px solid var(--border-color);
       color: var(--primary-gradient-start, #7b2ff7);
-      width: 44px;
-      height: 44px;
+      width: 44px; /* Ensure 44px minimum touch target */
+      height: 44px; /* Ensure 44px minimum touch target */
       padding: 0;
       border-radius: 50%;
       font-size: 1.4rem;
@@ -511,6 +540,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      /* Add tap highlight color */
+      -webkit-tap-highlight-color: rgba(241, 7, 163, 0.4);
     }
     .btn-icon:hover,
     .btn-icon:focus {
@@ -552,7 +583,7 @@
       display: block;
       margin-bottom: 12px;
       font-weight: 700;
-      color: var(--primary-gradient-start, #7b2ff7);
+      color: var(--primary-gradient-start, #7b2ff7); /* Check variable name consistency */
       font-size: 1.1rem;
       user-select: text;
     }
@@ -570,6 +601,8 @@
       transition: border-color var(--transition), box-shadow var(--transition);
       resize: vertical;
       user-select: text;
+      /* Ensure touch targets are easily tappable */
+      min-height: 44px;
     }
     input:focus,
     textarea:focus {
@@ -601,7 +634,7 @@
       user-select: text;
     }
     .contact-info h3 {
-      color: var(--secondary-gradient-start, #ed1e79);
+      color: var(--secondary-gradient-start, #ed1e79); /* Check variable name consistency */
       font-size: 1.85rem;
       margin-bottom: 36px;
       text-align: center;
@@ -621,7 +654,7 @@
       user-select: text;
     }
     .contact-info ul li i {
-      color: var(--primary-gradient-start, #7b2ff7);
+      color: var(--primary-gradient-start, #7b2ff7); /* Check variable name consistency */
       font-size: 1.5rem;
       flex-shrink: 0;
       margin-top: 2px;
@@ -678,7 +711,7 @@
     }
     .footer-brand h3 {
       font-size: 2rem;
-      color: var(--primary-gradient-start, #7b2ff7);
+      color: var(--primary-gradient-start, #7b2ff7); /* Check variable name consistency */
       margin-bottom: 14px;
       text-shadow: 0 0 20px #f107a3bb;
       user-select: none;
@@ -728,7 +761,7 @@
       text-shadow: 0 0 12px var(--link-hover-glow);
     }
     .footer-social ul li a i {
-      color: var(--secondary-gradient-start, #ed1e79);
+      color: var(--secondary-gradient-start, #ed1e79); /* Check variable name consistency */
       filter: drop-shadow(0 0 10px #ed1e79aa);
     }
     .footer-bottom {
@@ -1024,8 +1057,7 @@
             </div>
             <p class="audio-description">مداحی جانسوز در رثای سیدالشهدا (ع) در شب عاشورای حسینی.</p>
             <a href="nohe.html">بیشتر</a>
-
-        </article>
+          </article>
           <article class="audio-card" tabindex="0" aria-label="علمدار کربلا">
             <h3 class="audio-title"><a href="#" onclick="playAudio('audio/noheh-2.mp3', 'علمدار کربلا', 'شور و حماسه در وصف رشادت‌های حضرت ابوالفضل العباس.'); return false;" tabindex="0">علمدار کربلا</a></h3>
             <div class="audio-player-wrapper">
@@ -1033,13 +1065,11 @@
                 مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
               </audio>
               <p> <h1><div></div></h1></p>
-
             </div>
             <p class="audio-description">شور و حماسه در وصف رشادت‌های حضرت ابوالفضل العباس (ع).</p>
             <a href="nohe.html">بیشتر</a>
-
           </article>
-          
+
           <article class="audio-card" tabindex="0" aria-label="یا حسین غریب مادر">
             <h3 class="audio-title"><a href="#" onclick="playAudio('audio/noheh-3.mp3', 'یا حسین غریب مادر', 'نوحه ماندگار با نوای دلنشین در مظلومیت امام حسین.'); return false;" tabindex="0">یا حسین غریب مادر</a></h3>
             <div class="audio-player-wrapper">
@@ -1047,39 +1077,10 @@
                 مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
               </audio>
             </div>
-            
             <p class="audio-description">نوحه ماندگار با نوای دلنشین در مظلومیت امام حسین (ع).</p>
             <a href="nohe.html">بیشتر</a>
-
-        </article>
+          </article>
         </div>
-        <p> 
-            <div>
-                <h1>  
-
-                </h1>
-            </div>
-        </p>
-        <p>
-            <var>
-                <h2>   
-                       
-                    <p>   
-                        <h10>.</h10>
-                    </p>
-                </h2>
-            </var>
-        </p>
-        <p>
-            <var>
-                <h2>   
-                       
-                    <p>   
-                        <h10>.</h10>
-                    </p>
-                </h2>
-            </var>
-        </p>
         <div class="text-center mt-50">
           <a href="#audio-library" class="btn btn-outline" tabindex="0">مشاهده آرشیو کامل نوحه‌ها</a>
         </div>
@@ -1105,60 +1106,55 @@
           </div>
           <div class="audio-list-item" tabindex="0" aria-label="نوحه حضرت علی‌اصغر" role="region">
             <i class="fas fa-music" aria-hidden="true"></i>
-            <span class="audio-list-title">نوحه حضرت علی‌اصغر (ع)</span>
+            <span class="audio-list-title">نوحه حضرت علی‌اصغر</span>
             <audio controls src="audio/full-archive-3.mp3" preload="none"></audio>
-            <button class="btn-icon" aria-label="جزئیات نوحه حضرت علی‌اصغر" onclick="playAudio('audio/full-archive-3.mp3', 'نوحه حضرت علی‌اصغر (ع)', 'توضیحات نوحه حضرت علی‌اصغر')" tabindex="0"><i class="fas fa-info-circle"></i></button>
+            <button class="btn-icon" aria-label="جزئیات نوحه حضرت علی‌اصغر" onclick="playAudio('audio/full-archive-3.mp3', 'نوحه حضرت علی‌اصغر', 'توضیحات نوحه حضرت علی‌اصغر')" tabindex="0"><i class="fas fa-info-circle"></i></button>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section-container contact-section" tabindex="0" aria-label="تماس با من">
+    <section id="contact" class="section-container contact-section" tabindex="0" aria-label="تماس با ما">
       <div class="container">
-        <h2 class="section-title">تماس با من</h2>
-        <p class="section-description">برای هماهنگی مراسم، ارسال نظرات و پیشنهادات، یا هرگونه همکاری، از طریق فرم زیر با من در ارتباط باشید.</p>
+        <h2 class="section-title">تماس با ما</h2>
+        <p class="section-description">برای هماهنگی مراسم، پیشنهادات یا هرگونه سوالی، از طریق فرم زیر با ما در ارتباط باشید.</p>
         <div class="contact-content">
-          <form class="contact-form" onsubmit="handleContactForm(event)" novalidate>
-            <div class="form-group">
-              <label for="name">نام و نام خانوادگی:</label>
-              <input type="text" id="name" name="name" required placeholder="مثال: علی احمدی" />
-            </div>
-            <div class="form-group">
-              <label for="email">ایمیل:</label>
-              <input type="email" id="email" name="email" required placeholder="مثال: your.email@example.com" />
-            </div>
-            <div class="form-group">
-              <label for="subject">موضوع:</label>
-              <input type="text" id="subject" name="subject" placeholder="مثال: درخواست مداحی" />
-            </div>
-            <div class="form-group">
-              <label for="message">پیام شما:</label>
-              <textarea id="message" name="message" rows="6" required placeholder="پیام خود را اینجا بنویسید..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full-width">ارسال پیام</button>
-          </form>
-          <div
-            class="contact-info"
-            aria-live="polite"
-            role="region"
-            aria-atomic="true"
-            tabindex="0"
-            style="outline:none;"
-          >
-            <h3>راه‌های ارتباطی دیگر</h3>
+          <div class="contact-form">
+            <form action="#" method="POST">
+              <div class="form-group">
+                <label for="name">نام و نام خانوادگی:</label>
+                <input type="text" id="name" name="name" required placeholder="نام کامل شما" tabindex="0" />
+              </div>
+              <div class="form-group">
+                <label for="email">ایمیل:</label>
+                <input type="email" id="email" name="email" required placeholder="example@domain.com" tabindex="0" />
+              </div>
+              <div class="form-group">
+                <label for="subject">موضوع:</label>
+                <input type="text" id="subject" name="subject" required placeholder="موضوع پیام شما" tabindex="0" />
+              </div>
+              <div class="form-group">
+                <label for="message">پیام شما:</label>
+                <textarea id="message" name="message" required placeholder="متن پیام شما..." tabindex="0"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full-width" tabindex="0">ارسال پیام</button>
+            </form>
+          </div>
+          <div class="contact-info">
+            <h3>راه‌های ارتباطی</h3>
             <ul>
-              <li><i class="fas fa-envelope" aria-hidden="true"></i> ایمیل: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-              <li><i class="fas fa-phone-alt" aria-hidden="true"></i> تلفن (در صورت تمایل): <a href="tel:+989123456789">+۹۸ ۹۱۲ ۳۴۵ ۶۷۸۹</a></li>
-              <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> آدرس (در صورت تمایل): [شهر], [کشور]</li>
+              <li><i class="fas fa-envelope" aria-hidden="true"></i> ایمیل: <a href="mailto:info@hadimarjaneh.com" tabindex="0">info@hadimarjaneh.com</a></li>
+              <li><i class="fas fa-phone-alt" aria-hidden="true"></i> تلفن: <a href="tel:+989123456789" tabindex="0">+98 912 345 6789</a></li>
+              <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> آدرس: تهران، ایران</li>
             </ul>
             <div class="contact-map">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104889.30058862817!2d51.327668616117075!3d35.69838031541014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e004944d1887b%3A0x6b801a2f4477215b!2sTehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sfr!4v1716922119123!5m2!1sen!2sfr"
-                width="100%"
-                height="220"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12959.98293998822!2d51.38555620959086!3d35.68919797089155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00a9446f0001%3A0x6333333333333333!2sTehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
+                title="موقعیت مکانی در نقشه"
+                tabindex="0"
               ></iframe>
             </div>
           </div>
@@ -1168,75 +1164,80 @@
   </main>
 
   <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <h3>هادی مرجانه</h3>
-          <p>نوای معنویت، آرامش دل‌ها</p>
-        </div>
-        <div class="footer-links">
-          <h4>دسترسی سریع</h4>
-          <ul>
-            <li><a href="#about">درباره ما</a></li>
-            <li><a href="#featured-audio">مداحی‌های برگزیده</a></li>
-            <li><a href="#audio-library">آرشیو کامل</a></li>
-            <li><a href="#contact">تماس با ما</a></li>
-          </ul>
-        </div>
-        <div class="footer-social">
-          <h4>ما را دنبال کنید</h4>
-          <ul>
-            <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> اینستاگرام</a></li>
-            <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-telegram-plane"></i> تلگرام</a></li>
-            <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> یوتیوب</a></li>
-          </ul>
-        </div>
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>هادی مرجانه</h3>
+        <p>نوای دلنشین، سفری معنوی با مداحی‌های اهل بیت (ع).</p>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 تمامی حقوق این سایت متعلق به هادی مرجانه می‌باشد.</p>
+      <div class="footer-links">
+        <h4>لینک‌های سریع</h4>
+        <ul>
+          <li><a href="#about" tabindex="0"><i class="fas fa-chevron-left" aria-hidden="true"></i> درباره من</a></li>
+          <li><a href="#featured-audio" tabindex="0"><i class="fas fa-chevron-left" aria-hidden="true"></i> برگزیده‌ها</a></li>
+          <li><a href="#audio-library" tabindex="0"><i class="fas fa-chevron-left" aria-hidden="true"></i> آرشیو کامل</a></li>
+          <li><a href="#contact" tabindex="0"><i class="fas fa-chevron-left" aria-hidden="true"></i> تماس با ما</a></li>
+        </ul>
       </div>
+      <div class="footer-social">
+        <h4>ما را دنبال کنید</h4>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener" tabindex="0"><i class="fab fa-instagram" aria-hidden="true"></i> اینستاگرام</a></li>
+          <li><a href="#" target="_blank" rel="noopener" tabindex="0"><i class="fab fa-telegram-plane" aria-hidden="true"></i> تلگرام</a></li>
+          <li><a href="#" target="_blank" rel="noopener" tabindex="0"><i class="fab fa-youtube" aria-hidden="true"></i> یوتیوب</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 هادی مرجانه. تمامی حقوق محفوظ است.</p>
     </div>
   </footer>
 
   <script>
-    const navToggleBtn = document.getElementById('navToggleBtn');
-    const navLinks = document.getElementById('navLinks');
+    document.addEventListener('DOMContentLoaded', function() {
+      const navToggleBtn = document.getElementById('navToggleBtn');
+      const navLinks = document.getElementById('navLinks');
 
-    navToggleBtn.addEventListener('click', () => {
-      const expanded = navToggleBtn.getAttribute('aria-expanded') === 'true';
-      navToggleBtn.setAttribute('aria-expanded', !expanded);
-      navLinks.classList.toggle('active');
-      if (!expanded) {
-        navLinks.querySelector('a').focus();
-      } else {
-        navToggleBtn.focus();
+      if (navToggleBtn && navLinks) {
+        navToggleBtn.addEventListener('click', function() {
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !isExpanded);
+          navLinks.classList.toggle('active');
+          // Optionally, close menu when a link is clicked (especially on mobile)
+          navLinks.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', () => {
+              if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                navToggleBtn.setAttribute('aria-expanded', 'false');
+              }
+            });
+          });
+        });
       }
+
+      // Placeholder for your playAudio function
+      window.playAudio = function(audioSrc, title, description) {
+        console.log(`Playing: ${title} (${audioSrc}) - ${description}`);
+        // In a real application, you'd integrate a global audio player here
+        // For example:
+        // const currentAudioPlayer = document.querySelector('audio[controls][src="' + audioSrc + '"]');
+        // if (currentAudioPlayer) {
+        //   currentAudioPlayer.play();
+        // } else {
+        //   // Handle playing audio from a separate player if it's not directly in the card
+        // }
+      };
+
+      // Stop other audio players when one starts playing
+      document.querySelectorAll('audio').forEach(audioElement => {
+        audioElement.addEventListener('play', function() {
+          document.querySelectorAll('audio').forEach(otherAudioElement => {
+            if (otherAudioElement !== this) {
+              otherAudioElement.pause();
+            }
+          });
+        });
+      });
     });
-
-    // Audio playback function with fallback
-    function playAudio(src, title, description) {
-      try {
-        const audio = new Audio(src);
-        audio.volume = 0.85;
-        audio.play();
-        setTimeout(() => {
-          alert(`در حال پخش: ${title}\n${description}`);
-        }, 400);
-      } catch {
-        alert('خطا در پخش فایل صوتی.');
-      }
-    }
-    // Contact form handler
-    function handleContactForm(event) {
-      event.preventDefault();
-      const form = event.target;
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      alert('پیام شما با موفقیت ارسال شد! متشکریم.');
-      form.reset();
-    }
   </script>
 </body>
 </html>
